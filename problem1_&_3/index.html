@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BongoTest</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!--first problem solution-->
+    <section class="container">
+
+        <div class="first-problem pt-4">
+            <h1 class="heading">1<span class="period mr-1">.</span>Anagram</h1>
+            <!--form-->
+            <form>
+                <div class="form-group">
+                    <label for="word1">First Word</label>
+                    <input type="text" class="form-control" id="word1" aria-describedby="wordHelp1"
+                        placeholder="First Word" onkeypress="return alphaOnly(event);"
+                        onpaste="return alphaOnly(event);" required>
+                    <small id="wordHelp1" class="form-text text-muted">Input A-Z Only</small>
+                </div>
+                <div class="form-group">
+                    <label for="word2">Second Word</label>
+                    <input type="text" class="form-control" id="word2" aria-describedby="wordHelp2"
+                        placeholder="Second Word" onkeypress="return alphaOnly(event);"
+                        onpaste="return alphaOnly(event);" required>
+                    <small id="wordHelp2" class="form-text text-muted">Input A-Z Only</small>
+                </div>
+
+                <button type="button" id="submit" class="btn btn-primary" disabled="disabled"
+                    onclick="checkAnagram(document.getElementById('word1').value,document.getElementById('word2').value)">Submit</button>
+                <button type="reset" class="btn btn-primary reset-btn ml-1" id="resetbtn"
+                    onclick="clearResult()">Reset</button>
+            </form>
+            <div class="alert alert-light mt-2" role="alert" id="alertText">
+
+            </div>
+        </div>
+
+    </section>
+    <!--first problem solution ends-->
+
+    <!--third problem video player solution-->
+    <section class="container">
+        <h1 class="heading">3<span class="period mr-1">.</span>Video Player Application</h1>
+        <div class="row">
+            <div class="col-md-3 col-lg-3 col-sm-0 col-xs-0">
+
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                <!--select media-->
+                <div class="song-select mt-4">
+                    <h5 class="sel-text">Please select a video from the list</h5>
+                    <select name=mylist id=mylist onChange="playVideo();" class="form-control">
+                        <option id="1" value="./assets/video1.mp4">Rain Sounds.mp4
+                        <option id="2" value="./assets/video2.mp4">Canal Sounds.mp4
+
+                    </select>
+                    <video id="myvideo" preload="auto" class="mt-3" controls="true">
+                        HTML5 video not supported
+                    </video>
+                    <button id="play" onClick="playVideo();" class="btn btn-primary mt-1">Play/Pause</button>
+                    <button id="rewind" onclick="rewindVideo();" class="btn btn-rewind mt-1"><i
+                            class="fas fa-backward mr-1"></i>10sec</button>
+                    <button id="forward" onclick="forwardVideo();" class="btn btn-rewind mt-1"><i class="fas fa-forward mr-1"></i>10sec</button>        
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <!--scripts-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="firstproblem.js"></script>
+    <script src="videoplayer.js"></script>
+</body>
+
+</html>
